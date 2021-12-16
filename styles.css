@@ -1,0 +1,272 @@
+
+*{
+    overflow-x: hidden;
+}
+
+header{
+    background-image: url('/images/pic8.jpg');
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    /* color: white; */
+    width: 100%;
+}
+
+nav{
+    /* background-color: transparent; */
+    display: flex;
+    /* justify-content: flex-start; */
+    box-shadow: 2px 2px 3px  rgb(109, 68, 105);
+    position: fixed;
+    width: 99%;
+    min-height: 80;
+    z-index: 2;
+   
+
+}
+nav.sticky{
+    
+    position: fixed;
+    background-color: rgb(204,178,181);
+    z-index: 2;
+
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+    
+}
+
+li{
+    gap: 1.5em;
+    padding: 0.6em;
+}
+
+li a{
+    text-decoration: none;
+    color: rgb(97, 91, 91);
+    font-size: 1em;
+    /* gap: 1em; */
+    /* margin: 10px 0; */
+    
+
+}
+li a:hover{
+    color: rgb(226, 39, 6);
+    /* font-weight: bold
+    ; */
+}
+
+#anchor{
+    border: none;
+    background-color: rgb(212, 55, 27);
+    /* width: 10%; */
+    padding: 0.3em;
+    margin: 0.4em;
+    /* margin-bottom: 2em; */
+    border-radius: 5px; 
+    text-decoration: none;
+    color: white;
+    font-size: 0.8em;
+    text-align: center;
+
+}
+#anchor:hover{
+    color: rgb(7, 3, 3);
+}
+
+.search{
+    margin-left: 25em;
+    position: relative;
+
+}
+
+input{
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+    border: none;
+    transition: width 0.35s ;
+    
+}
+
+input:focus{
+    outline: 0;
+}
+/* transitions and making pages active */
+
+button{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 41px;
+    padding: 6px;
+    height: 42px;
+    border: 0;
+    cursor: pointer;
+    transition:ease 0.15s ;
+    background-color: rgb(226,216,215);  
+}
+
+
+.search.active input{
+    width: 225px;
+}
+
+.search.active button{
+    transform: translateX(200px);
+   
+}
+
+#text{
+    margin-top: 7em;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 2em;
+    transition: 4s;
+    animation: popIn 4s;
+    color: rgb(3, 3, 3);
+    /* top: 50%;
+    left: 30%; */
+}
+
+@keyframes popIn {
+    0%{
+        opacity: 0;;
+    }
+
+    100%{
+        opacity: 1px;
+        transform: translate(45deg);
+    }
+    
+}
+
+h2 a{
+    text-decoration: none;
+    color: rgb(223, 55, 4);
+}
+#texts{
+    display: flex;
+   justify-content: space-between;
+   gap: 5em;
+}
+#grid-container{
+    width: 100%;
+    /* height:30em; */
+    display: grid;
+
+    background-color: rgb(241,243,244);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr ;
+    grid-column-gap: 1px;
+    grid-row-gap: 2px;
+    /* margin: auto; */
+    padding: 1.2em;
+    
+}
+
+#cards img{
+    width: 90%;
+    height: 75%;
+    border-radius: 5px;
+    
+    
+}
+
+
+#content-last{
+    /* display: flex; */
+    /* top: 100%; */
+   
+    /* position: relative; */
+    background-color: rgb(204,178,181);
+    color: rgb(97, 91, 91);
+}
+
+#story{
+    width: 50%;
+    text-align: center;
+  margin: auto;
+  padding: 0.5em;
+    font-size: 1.3em;
+    
+}
+#social{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#story a{
+    color: rgb(223, 55, 4);
+    font-weight: bold;
+   font-size: 1em;
+}
+
+#card{
+    
+    /* margin-top: 1em; */
+  
+    width: 15%;
+    
+}
+
+#card img{
+    width: 95%;
+    height: 80%;
+}
+
+#icons{
+    align-items: center;
+    padding: 0.9em;
+    display: flex;
+    justify-content: center;
+}
+
+#icon{
+    padding: 0.8em;
+    margin-bottom: 1em;
+}
+
+footer{
+    text-align: center;
+    background-color: rgb(3,5,6);
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    margin: auto;
+    position: relative;
+    color: white;
+}
+
+@media screen and (max-width : 600px) {
+    nav{
+       
+        display: block;
+    }
+
+    ul{
+        display: block;
+        list-style-type: none;  
+    }
+    
+
+    #text{
+        margin-top: 13em;
+        
+    }
+    
+
+    #grid-container{
+        width: 100%;
+        /* height:30em; */
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
+}
