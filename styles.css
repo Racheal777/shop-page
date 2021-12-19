@@ -33,7 +33,7 @@ nav{
 }
 nav.sticky{
     
-    position: fixed;
+    /* position: fixed; */
     background-color: rgb(204,178,181);
     box-shadow: 2px 2px 3px  rgb(109, 68, 105);
     z-index: 2;
@@ -43,13 +43,13 @@ nav.sticky{
 ul{
     display: flex;
     list-style-type: none;
+    /* padding: 1em; */
     
 }
 bold{
     padding-left: 1.1em;
     font-size: 1.3em;
-    /* color: black; */
-    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    
 }
 li{
     gap: 1.5em;
@@ -72,22 +72,25 @@ li a:hover{
     ; */
 }
 
-#anchor{
-    border: none;
-    background-color: rgb(212, 55, 27);
-    /* width: 10%; */
-    padding: 0.3em;
-    
-    border-radius: 7px; 
-    text-decoration: none;
-    color: white;
-    font-size: 0.8em;
-    text-align: center;
+.hamburger{
+    display: none;
+}
 
+
+
+.bar{
+    display: block;
+    width: 25px;
+    font-size: 4em;
+    height: 5px;
+    margin: 5px 24px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(109, 68, 105);
+    
 }
-#anchor:hover{
-    color: rgb(7, 3, 3);
-}
+
+
 
 .search{
     margin-left: 15em;
@@ -109,7 +112,7 @@ input:focus{
 }
 /* transitions and making pages active */
 
-button{
+.search button{
     position: absolute;
     left: 0;
     top: 0;
@@ -118,10 +121,32 @@ button{
     height: 42px;
     border: 0;
     cursor: pointer;
-    transition:ease 0.15s ;
+    transition:ease 0.35s ;
     background-color: rgb(226,216,215);  
 }
 
+#text button{
+    left: 60%;
+    width: 20%;
+    padding: 0.4em;
+    font-size: 0.8em;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    background-color:rgb(97, 91, 91);
+    
+    
+    color: white;
+   
+    text-align: center;
+
+    
+}
+
+#text button:hover{
+    background-color: rgb(212, 55, 27);
+    /* color: rgb(212, 55, 27); */
+}
 
 .search.active input{
     width: 225px;
@@ -137,13 +162,20 @@ button{
     font-size: 2em;
     top: 50%;
     left: 50%;
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    /* padding: 1em; */
     transform: translate(-50%, -50%);
     transition: 2s;
-    /* transform: translate(45deg); */
+    
     animation: popIn 3s ;
-    color: rgb(36, 34, 34);
-    /* top: 50%;
-    left: 30%; */
+    color: rgb(97, 91, 91);
+    
+}
+
+#text h2{
+    padding: 0.6em;
 }
 
 @keyframes popIn {
@@ -170,7 +202,7 @@ h2 a{
 }
 #texts{
     display: flex;
-   justify-content: space-around;
+   justify-content: space-between;
    padding: 2.7em;
    position: relative;
    /* margin-top: 2em; */
@@ -180,8 +212,7 @@ h2 a{
  #grid-container{
    
     display: grid;
-
-    /* background-color: rgb(241,243,244); */
+    text-align: center;
     grid-template-columns: 300px 300px 300px 300px; 
     justify-content: center;
     grid-template-rows: 250px 250px 250px ; 
@@ -195,6 +226,7 @@ h2 a{
 
 #cards{
     width: 95%;
+    height: 95%;
 }
 
 #cards img{
@@ -276,6 +308,10 @@ h2 a{
     margin-bottom: 1em;
 }
 
+#icon:hover{
+    color: aliceblue;
+}
+
 footer{
     text-align: center;
     background-color: rgb(3,5,6);
@@ -289,59 +325,34 @@ footer{
 }
 
 @media screen and (max-width : 600px) {
-    nav{
-       
-        display: block;
-    }
-
-    ul{
-        display: block;
-        list-style-type: none;  
-    }
-    
-
-    #text{
-        margin-top: 13em;
-        
-    }
-    
-
-    #grid-container{
-        width: 90%;
-        height: 40%;
-        /* height:30em; */
-        display: flex;
+        #list{
+        position: fixed;
+        left: -100%;
+        /* top: -100%; */
+        top: 0;
         flex-direction: column;
-        
-    }
-    
-    #story{
-        width: 70%;
+        background-color: rgb(204,178,181);
+        width: 100%;
+        border-radius: 10px;
         text-align: center;
-      margin: auto;
-      padding: 1.2em;
-        font-size: 1em;
-        
+        transition: 0.4s;
+        margin-top: 1em;
+       
+        box-shadow:
+            0 10px 27px rgb(204,178,181);
     }
 
-    #cards{
-        height: 40%;
-    }
-    #cards img{
-        width: 90%;
-        height: 50%;
-        border-radius: 7px;  
-        
-    }
-
-    .nav-menu.active{
+    #list.active {
         left: 0;
+        /* top: 0;  */
     }
+
+
     .hamburger{
         display: block;
         cursor: pointer;
     }
-    
+
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
@@ -353,4 +364,263 @@ footer{
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
+    
+    .search{
+        margin-left: 8em;
+        position: relative;
+    
+    }
+    .search button{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30px;
+        padding: 6px;
+        height: 30px;
+        border: 0;
+        cursor: pointer;
+        transition:ease 0.35s ;
+        background-color: rgb(226,216,215);  
+    }
+    
+    input{
+        background-color: rgb(226,216,215);
+        width: 19px;
+        height: 19px;
+        padding: 6px;
+        border: none;
+        transition: width 0.35s ;
+        
+    }
+    .search.active input{
+        width: 140px;
+        background-color: rgb(226,216,215);  
+    }
+    
+    .search.active button{
+        transform: translateX(125px);
+       
+    }
+
+    #text{
+        position: absolute;
+        font-size: 1em;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        width: 90%;
+        margin: auto;
+        
+        
+    }
+    
+
+    #text button{
+        left: 60%;
+        width: 25%;
+        padding: 0.4em;
+        font-size: 0.7em;
+        border-radius: 7px;
+        border: none;
+        cursor: pointer;
+        background-color:rgb(97, 91, 91);
+        color: white;
+        text-align: center;
+    }
+
+    #text button:hover{
+        background-color: rgb(212, 55, 27);
+    }
+    header {
+        
+        min-height: 30vh;
+        width: 80%;
+       
+        margin: auto;
+        
+    }
+
+    #grid-container{
+        display: flex;
+        flex-direction: column;
+        
+        grid-row-gap: 20px; 
+        margin: auto ; 
+        padding: 2em ;
+        
+    }
+    
+    #cards img{
+        width: 100%;
+        height: 10%;
+        border-radius: 7px;  
+        
+    }
+
+    #story{
+        width: 70%;   
+    }
+    
+    #story h2{
+        width: 70%;  
+        
+    }
+    
+    #story a{
+        
+       padding: 1.7em;
+       
+    }
+    
+    #card{
+        width: 15%;
+        
+    }
+    
+    #card:hover{
+        transform: scale(1.5); 
+    }
+    #card img{
+        width: 90%;
+        
+    }
+    #icons #icon:hover{
+        color: rgb(218, 67, 30);
+    }
+    
+    footer{
+        
+        font-size: 0.7em;
+        
+    }
+
+}
+@media screen and (min-width : 768px) and (max-width: 959px){
+    
+    header{
+        min-height: 40vh;
+    }
+    bold{
+        padding-left: 1.1em;
+        font-size: 1.1em;
+        
+    }
+    li{
+        gap: 1.1em;
+        padding: 0.8em;
+        list-style-type: none;
+    }
+    
+    li a{
+        
+        font-size: 1em;
+    
+    }
+    
+    
+    
+    #anchor{
+        border: none;
+        background-color: rgb(212, 55, 27);
+        /* width: 10%; */
+        padding: 0.3em;
+        margin: auto;
+        border-radius: 6px; 
+        text-decoration: none;
+        color: white;
+        font-size: 0.8em;
+        text-align: center;
+    
+    }
+      
+    .search{
+        margin-left: 3em;
+        position: relative;
+    
+    }
+    
+    
+    
+    #text{
+        position: absolute;
+        font-size: 1.7em;
+        width: 90%;
+       
+    }
+    
+    #texts{
+        display: flex;
+       justify-content: space-between;
+       padding: 2.7em;
+       position: relative;
+       
+       top: 3em;
+    }
+      #grid-container{
+       
+        display: grid;
+        grid-template-columns: 250px 250px 250px ;
+        grid-column-gap: 18px;
+    grid-row-gap: 10px;  
+    }  
+    
+    
+    #cards{
+        margin: auto;
+        left: 0;
+        
+        width: 90%; 
+    }
+    
+    #cards img{
+        width: 100%;
+        height: 90%;
+        border-radius: 7px;  
+        
+    }
+    
+    
+    
+    
+    #story{
+        width: 70%;
+        
+        
+    }
+    
+    #story h2{
+        width: 70%;
+        
+        
+        
+    }
+    
+    #story a{
+        
+       font-size: 1.2em;
+       
+    }
+    
+    #card{
+        width: 13%;
+        
+    }
+    
+    
+    #card img{
+        width: 90%;
+        height: 80%;
+        border-radius: 6px;
+    }
+    
+    
+    
+    
+    
+    
+    
+
+
+
 }

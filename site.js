@@ -63,3 +63,29 @@ const icon = document.getElementById('icon')
 icon.addEventListener('click', () => {
     social.classList.add()
 })
+
+
+//Dom selector
+const ham = document.querySelector('.hamburger')
+const nav = document.getElementById('list')
+const links = document.querySelectorAll('.nav-link')
+
+//event listener
+ham.addEventListener('click',mobileMenu)
+
+//function to toggle the class active
+function mobileMenu(){
+  ham.classList.toggle('active')
+  nav.classList.toggle('active')
+  
+}
+
+// links.forEach(item => item.addEventListener('click', closeMenu ));
+links.forEach(n => n.addEventListener("click", closeMenu));
+
+// links.forEach(element => {element.addEventListener('click', closeMenu)});
+
+function closeMenu(){
+    ham.classList.remove('active')
+    nav.classList.remove('active')
+}
