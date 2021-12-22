@@ -102,7 +102,9 @@ input{
     width: 30px;
     height: 30px;
     padding: 6px;
+    margin-top: 0.5em;
     border: none;
+    padding-top: 0.5em;
     transition: width 0.35s ;
     
 }
@@ -114,6 +116,7 @@ input:focus{
 
 .search button{
     position: absolute;
+    margin-top: 0.5em;
     left: 0;
     top: 0;
     width: 41px;
@@ -443,6 +446,16 @@ footer{
        
         margin: auto;
         
+    }
+    #texts{
+        /* display: flex;
+       justify-content: space-between;
+       padding: 2.7em;
+       position: relative; */
+       z-index: -1;
+       /* margin-top: 2em; */
+       /* margin-bottom: 0; */
+       top: 3em;
     }
 
     #grid-container{
