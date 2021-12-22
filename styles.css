@@ -235,6 +235,9 @@ h2 a{
     border-radius: 7px;  
     
 }
+#cards p {
+    font-size: 1.2em;
+}
 
 
 #content-last{
@@ -436,6 +439,7 @@ footer{
         
         min-height: 30vh;
         width: 80%;
+        z-index: -1;
        
         margin: auto;
         
@@ -496,6 +500,185 @@ footer{
     }
 
 }
+
+
+
+
+@media screen and (min-width : 600px) and (max-width:762px){
+    #list{
+    position: fixed;
+    left: -100%;
+    /* top: -100%; */
+    top: 0;
+    flex-direction: column;
+    background-color: rgb(204,178,181);
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.4s;
+    margin-top: 1em;
+   
+    box-shadow:
+        0 10px 27px rgb(204,178,181);
+}
+
+#list.active {
+    left: 0;
+    /* top: 0;  */
+}
+
+
+.hamburger{
+    display: block;
+    cursor: pointer;
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+.search{
+    /* padding-top: 0.5em; */
+    margin-left: 8em;
+    position: relative;
+
+}
+.search button{
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* padding-top: 0.5em; */
+    width: 30px;
+    padding: 6px;
+    height: 30px;
+    border: 0;
+    cursor: pointer;
+    transition:ease 0.35s ;
+    background-color: rgb(226,216,215);  
+}
+
+input{
+    background-color: rgb(226,216,215);
+    width: 19px;
+    height: 19px;
+    padding: 6px;
+    border: none;
+    transition: width 0.35s ;
+    
+}
+.search.active input{
+    width: 180px;
+    background-color: rgb(226,216,215);  
+}
+
+.search.active button{
+    transform: translateX(165px);
+   
+}
+
+#text{
+    position: absolute;
+    font-size: 1em;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    margin: auto;
+    
+    
+}
+
+
+#text button{
+    left: 60%;
+    width: 25%;
+    padding: 0.4em;
+    font-size: 0.7em;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    background-color:rgb(97, 91, 91);
+    color: white;
+    text-align: center;
+}
+
+#text button:hover{
+    background-color: rgb(212, 55, 27);
+}
+header {
+    
+    min-height: 40vh;
+    width: 80%;
+    z-index: -1;
+   
+    margin: auto;
+    
+}
+
+#grid-container{
+       
+    display: grid;
+    grid-template-columns: 250px 250px  ;
+    grid-column-gap: 18px;
+    grid-row-gap: 10px;  
+}  
+
+#cards img{
+    width: 100%;
+    height: 90%;
+    border-radius: 7px;  
+    
+}
+
+#story{
+    width: 70%;   
+}
+
+#story h2{
+    width: 70%;  
+    
+}
+
+#story a{
+    
+   padding: 1.7em;
+   
+}
+
+#card{
+    width: 15%;
+    
+}
+
+#card:hover{
+    transform: scale(1.5); 
+}
+#card img{
+    width: 90%;
+    
+}
+#icons #icon:hover{
+    color: rgb(218, 67, 30);
+}
+
+footer{
+    
+    font-size: 0.7em;
+    
+}
+
+}
+
+
 @media screen and (min-width : 768px) and (max-width: 959px){
     
     header{
